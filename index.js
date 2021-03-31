@@ -9,7 +9,6 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express()
-
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -64,8 +63,5 @@ client.connect(err => {
     })
 });
 
-app.get('/', (req, res) => {
-    res.send('Hay! I am a Node js Developer')
-})
 
 app.listen(5000)
